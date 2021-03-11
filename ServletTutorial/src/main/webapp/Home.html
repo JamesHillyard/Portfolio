@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<h1>Servlet Demo</h1>
+</head>
+<body>
+<h2>Mapping exceptions </h2>
+<ul>
+	<li> /Error -> 500 Error </li>		
+	<li> /Errore -> 404 Error </li>
+</ul>
+
+<h2>Cookies </h2>
+	<ul> 
+		<li> /CreateCookie -> Creates a cookie with sample values
+		<li> /EditCookie -> Edits the cookie created before 
+		<li> /DeleteCookie -> Deletes the cookie created before
+		<li> /CookieInfo -> Displays information about the cookie
+	</ul>
+
+<h2>Sessions </h2>
+	<ul> 
+		<li> /StartSession -> Sets some default attributes for the session 
+		<li> /EditSession -> Changes the session attributes 
+		<li> /DeleteSession -> Invalidates the session 
+		<li> /DeleteAttribute -> Just removes the 'edited' attribute
+	</ul>
+<h2>Filters example</h2>
+	<ol>
+		<li> /GetLogin.html
+		<ol style = "list-style-type: decimal;">
+			<li> Enter Sophie:A -> Invalid login
+			<li> Enter Seb:Password -> Banned user
+			<li> Enter James:Password -> Logged in
+		</ol>
+		<li> /DemoInput.jsp
+		<ol>
+			<li> Enter James1 -> Error message asking for valid input
+			<li> Enter James -> Passed, displays your input
+		</ol>
+	</ol>
+<h2>Listeners</h2>
+The listeners I have implemented all output to the admin console of the server what's happening
+	<ol>
+		<li> /AttributeTrigger -> Will create, change and delete an attribute
+	</ol>
+Listeners in place:
+	<ol>
+		<li> Attribute Listener -> Will trigger whenever an attribute is created, changed or deleted
+		<li> Context Listener -> Triggers when the ServletContext lifecycle changes
+		<li> Request Listener -> Triggers when a servlet request is created or destroyed
+		<li> Session Listener -> Triggers when a session is created or invalidated
+	</ol>
+<h2>Redirecting</h2>
+	<ol>
+		<li> Forward -> Forwards the request to another location (Will keep parameter values)
+		<ul><li>The extendedDemo system is using forwarding to keep your username when you login</ul>
+		<li> Redirect -> Redirected to a different source with a new request
+		<ul><li>The session and cookie examples are using redirect to get back to the information page</ul>
+	</ol>
+</body>
+</html>
