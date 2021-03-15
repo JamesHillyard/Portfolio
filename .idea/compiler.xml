@@ -9,5 +9,8 @@
         <module name="ServletTutorial" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JSP" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
