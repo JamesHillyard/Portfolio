@@ -3,5 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+  <!-- Sets an init param for ImplicitObjects/Config -->
   <display-name>JSP</display-name>
+  <servlet>
+    <servlet-name>ImplicitObjectsConfig</servlet-name>
+    <jsp-file>/ImplicitObjects/Config/Config.jsp</jsp-file>
+    <init-param>
+    <param-name>Creator</param-name>
+    <param-value>James Hillyard</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImplicitObjectsConfig</servlet-name>
+    <url-pattern>/ImplicitObjects/Config/Config.jsp</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+    <param-name>Creator</param-name>
+    <param-value>James Hillyard</param-value>
+  </context-param>
 </web-app>
