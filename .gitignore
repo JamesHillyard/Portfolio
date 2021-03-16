@@ -1,2 +1,5 @@
+#Maven
 target/
-/out/artifacts/JSP*
+#User-Specific
+.idea
+*.iml
