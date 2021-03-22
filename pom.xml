@@ -11,6 +11,7 @@
     <modules>
         <module>JavaEE/ServletTutorial</module>
         <module>JavaEE/JSP</module>
+        <module>JavaEE/CDI</module>
     </modules>
 
     <properties>
