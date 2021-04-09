@@ -13,6 +13,7 @@
         <module>JavaEE/ServletTutorial</module>
         <module>JavaEE/JSP</module>
         <module>JavaEE/CDI</module>
+        <module>JAX-RS</module>
     </modules>
 
     <properties>
