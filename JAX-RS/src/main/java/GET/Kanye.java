@@ -1,7 +1,7 @@
 package GET;
 
-import javax.enterprise.context.Dependent;
-import javax.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;

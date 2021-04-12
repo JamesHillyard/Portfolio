@@ -59,7 +59,20 @@ public class DatabaseOrderOperations {
                 statement.setInt(2, quantity);
                 statement.setInt(3, id);
                 statement.execute();
-                //operationUpdateCount=statement.getUpdateCount();
+                operationUpdateCount=statement.getUpdateCount();
+            }
+        } catch (SQLException ex){
+            ex.printStackTrace();
+            operationErrorMessage = ex.getMessage();
+        }
+    }
+
+    public void deleteOrder(int id){
+        try(Connection connection = dataSource.getConnection()){
+            try(PreparedStatement statement = connection.prepareStatement("DELETE FROM Orders WHERE id = ?;")){
+                statement.setInt(1, id);
+                statement.execute();
+                operationUpdateCount=statement.getUpdateCount();
             }
         } catch (SQLException ex){
             ex.printStackTrace();

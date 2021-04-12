@@ -18,7 +18,7 @@ public class OrderResource {
     DatabaseOrderOperations orderOperations;
 
     @GET
-    @Path("/{id}")
+    @Path("/get/{id}")
     public Order getOrder(@PathParam("id") int id) {
         Order order = orderOperations.findOrder(id);
         return order;
@@ -38,5 +38,32 @@ public class OrderResource {
                 .build();
     }
 
+    @POST
+    @Path("/update")
+    public Response updateUser(@FormParam("id") int id, @FormParam("product") String product, @FormParam("quantity") int quantity){
+        orderOperations.updateOrder(id, product, quantity);
+        if(orderOperations.getOperationUpdateCount()>0){
+            return Response.status(200)
+                    .entity("Order updated successfully!")
+                    .build();
+        }
+        return Response.status(406)
+                .entity("No changed made.\n"+orderOperations.getOperationErrorMessage())
+                .build();
+    }
+
+    @POST
+    @Path("/delete")
+    public Response deleteUser(@FormParam("id") int id) {
+        orderOperations.deleteOrder(id);
+        if(getOrder(id)==null){
+            return Response.status(200)
+                    .entity("Order deleted successfully!")
+                    .build();
+        }
+        return Response.status(406)
+                .entity("Order failed to be removed.\n"+orderOperations.getOperationErrorMessage())
+                .build();
+    }
 }
 
