@@ -1,6 +1,6 @@
 package POST;
 
-import Extras.DatabaseOrderOperations;
+import POST.Extras.DatabaseOrderOperations;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -19,6 +19,7 @@ public class OrderResource {
 
     @GET
     @Path("/get/{id}")
+    @Produces("application/json")
     public Order getOrder(@PathParam("id") int id) {
         Order order = orderOperations.findOrder(id);
         return order;
@@ -55,6 +56,36 @@ public class OrderResource {
     @POST
     @Path("/delete")
     public Response deleteUser(@FormParam("id") int id) {
+        orderOperations.deleteOrder(id);
+        if(getOrder(id)==null){
+            return Response.status(200)
+                    .entity("Order deleted successfully!")
+                    .build();
+        }
+        return Response.status(406)
+                .entity("Order failed to be removed.\n"+orderOperations.getOperationErrorMessage())
+                .build();
+    }
+
+
+    // <-- For Testing -->
+    @PUT
+    @Path("/update/{id}/{product}/{quantity}")
+    public Response updateUserTesting(@PathParam("id") int id, @PathParam("product") String product, @PathParam("quantity") int quantity){
+        orderOperations.updateOrder(id, product, quantity);
+        if(orderOperations.getOperationUpdateCount()>0){
+            return Response.status(200)
+                    .entity("Order updated successfully!")
+                    .build();
+        }
+        return Response.status(406)
+                .entity("No changed made.\n"+orderOperations.getOperationErrorMessage())
+                .build();
+    }
+
+    @DELETE
+    @Path("/delete/{id}")
+    public Response deleteUserTesting(@PathParam("id") int id) {
         orderOperations.deleteOrder(id);
         if(getOrder(id)==null){
             return Response.status(200)

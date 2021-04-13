@@ -3,7 +3,6 @@ package Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
 
 @Path("/produces")
 @Produces("text/plain")
@@ -15,38 +14,30 @@ public class ProducesExample {
     // Using the JSON String variable
     @GET
     @Path("/jsonplain")
-    public Response doGetJsonAsPlainTest(){
-        return Response.status(200)
-                .entity(JSONSTRING)
-                .build();
+    public String doGetJsonAsPlainTest(){
+        return JSONSTRING;
     }
 
     @GET
     @Path("/json")
     @Produces("application/json")
-    public Response doGetAsJson(){
-        return Response.status(200)
-                .entity(JSONSTRING)
-                .build();
+    public String doGetAsJson(){
+        return JSONSTRING;
     }
 
     //Using HTML String variable
 
     @GET
     @Path("/htmlplain")
-    public Response doGetHtmlAsPlainTest(){
-        return Response.status(200)
-                .entity(HTMLSTRING)
-                .build();
+    public String doGetHtmlAsPlainTest(){
+        return HTMLSTRING;
     }
 
     @GET
     @Path("/html")
     @Produces("text/html")
-    public Response doGetAsHtml(){
-        return Response.status(200)
-                .entity(HTMLSTRING)
-                .build();
+    public String doGetAsHtml(){
+        return HTMLSTRING;
     }
 
 
