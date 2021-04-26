@@ -15,11 +15,12 @@ public class UpdateCookie {
     @Path("{name}")
     public Response updateCookie(@CookieParam("name") Cookie cookie, @PathParam("name") String name){
         if (cookie != null){
+            Cookie updatedCookie = new Cookie("name", name, "/", "localhost");
             return Response
                     .ok()
-                    .cookie(new NewCookie("name", name))
+                    .cookie(new NewCookie(updatedCookie))
                     .build();
         }
-        return Response.ok().build();
+        return Response.noContent().entity("No cookie found").build();
     }
 }
