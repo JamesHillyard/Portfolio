@@ -18,12 +18,11 @@ public class DeleteCookie {
     @DELETE
     public Response deleteCookie(@CookieParam("name") Cookie cookie){
         if (cookie != null){
-            NewCookie newCookie = new NewCookie(cookie, "delete cookie", 0, false);
             return Response
                     .ok()
-                    .cookie(newCookie)
+                    .cookie(new NewCookie("name", "", "/", "localhost", "Delete Cookie", 0, true))
                     .build();
         }
-        return Response.ok().build();
+        return Response.noContent().entity("No cookie found").build();
     }
 }
