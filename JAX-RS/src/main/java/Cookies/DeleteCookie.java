@@ -16,11 +16,11 @@ public class DeleteCookie {
      */
 
     @DELETE
-    public Response deleteCookie(@CookieParam("name") Cookie cookie){
+    public Response deleteCookie(@CookieParam("Name-Cookie") Cookie cookie){
         if (cookie != null){
             return Response
                     .ok()
-                    .cookie(new NewCookie("name", "", "/", "localhost", "Delete Cookie", 0, true))
+                    .cookie(new NewCookie("Name-Cookie", "", "/tutorial", "localhost", "A name storing cookie", 0, false))
                     .build();
         }
         return Response.noContent().entity("No cookie found").build();

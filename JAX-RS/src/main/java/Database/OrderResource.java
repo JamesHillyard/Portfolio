@@ -1,6 +1,6 @@
-package POST;
+package Database;
 
-import POST.Extras.DatabaseOrderOperations;
+import Database.Extras.DatabaseOrderOperations;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -18,20 +18,20 @@ public class OrderResource {
     DatabaseOrderOperations orderOperations;
 
     @GET
-    @Path("/get/{id}")
+    @Path("/get")
     @Produces("application/json")
-    public Order getOrder(@PathParam("id") int id) {
+    public Order getOrder(@QueryParam("id") int id) {
         Order order = orderOperations.findOrder(id);
         return order;
     }
 
     @POST
     @Path("/add")
-    public Response addUser(@FormParam("id") int id, @FormParam("product") String product, @FormParam("quantity") int quantity) {
+    public Response addUser(@QueryParam("id") int id, @QueryParam("product") String product, @QueryParam("quantity") int quantity) {
         orderOperations.addOrder(id, product, quantity);
         if(getOrder(id)!=null){
             return Response.status(200)
-                    .entity("Order added successfully!<br> Id: " + id + "<br> Name: " + product + "<br> Quantity: " + quantity)
+                    .entity("Order added successfully!\n Id: " + id + "\n Name: " + product + "\n Quantity: " + quantity)
                     .build();
         }
         return Response.status(406)
@@ -40,8 +40,8 @@ public class OrderResource {
     }
 
     @PUT
-    @Path("/update/{id}/{product}/{quantity}")
-    public Response updateUserTesting(@PathParam("id") int id, @PathParam("product") String product, @PathParam("quantity") int quantity){
+    @Path("/update")
+    public Response updateUserTesting(@QueryParam("id") int id, @QueryParam("product") String product, @QueryParam("quantity") int quantity){
         orderOperations.updateOrder(id, product, quantity);
         if(orderOperations.getOperationUpdateCount()>0){
             return Response.status(200)
@@ -54,8 +54,8 @@ public class OrderResource {
     }
 
     @DELETE
-    @Path("/delete/{id}")
-    public Response deleteUserTesting(@PathParam("id") int id) {
+    @Path("/delete")
+    public Response deleteUserTesting(@QueryParam("id") int id) {
         orderOperations.deleteOrder(id);
         if(getOrder(id)==null){
             return Response.status(200)

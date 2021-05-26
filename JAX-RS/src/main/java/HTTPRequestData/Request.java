@@ -14,8 +14,8 @@ public class Request {
     public Response getUriInfo(@Context UriInfo uri){
         return Response.ok().entity(
                 "Request Uri "+uri.getRequestUri() +
-                "\nAbsolute Path"+uri.getAbsolutePath() +
-                "\nPath Parameters"+uri.getPathParameters())
+                "\nPath "+uri.getPath() +
+                "\nPath Parameters "+uri.getPathParameters())
                 .build();
     }
 }

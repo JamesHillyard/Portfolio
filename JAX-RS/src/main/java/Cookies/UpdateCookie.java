@@ -13,14 +13,13 @@ public class UpdateCookie {
 
     @PUT
     @Path("{name}")
-    public Response updateCookie(@CookieParam("name") Cookie cookie, @PathParam("name") String name){
+    public Response updateCookie(@CookieParam("Name-Cookie") Cookie cookie, @PathParam("name") String name){
         if (cookie != null){
-            Cookie updatedCookie = new Cookie("name", name, "/", "localhost");
             return Response
                     .ok()
-                    .cookie(new NewCookie(updatedCookie))
+                    .cookie(new NewCookie("Name-Cookie", name, "/tutorial", "localhost", "A name storing cookie", 10000, false))
                     .build();
         }
-        return Response.noContent().entity("No cookie found").build();
+        return Response.ok().build();
     }
 }

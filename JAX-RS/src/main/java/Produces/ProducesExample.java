@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 public class ProducesExample {
 
     private static final String JSONSTRING = "{\"age\":30}";
-    private static final String HTMLSTRING = "<h1>JAX-RS Tutorial<h1>";
+    private static final String HTMLSTRING = "<b>JAX-RS Tutorial</b>";
 
     // Using the JSON String variable
     @GET

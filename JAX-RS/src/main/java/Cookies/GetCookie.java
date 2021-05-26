@@ -13,7 +13,7 @@ public class GetCookie {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public Response getCookie(@CookieParam("name") Cookie cookie) {
+    public Response getCookie(@CookieParam("Name-Cookie") Cookie cookie) {
         if (cookie == null) {
             return Response.serverError().entity("ERROR").build();
         } else {
