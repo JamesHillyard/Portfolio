@@ -6,8 +6,7 @@
 
   <persistence-unit name="JPA.Tutorial">
     <properties>
-      <!-- This property is needed so hibernate can create tables -->
-      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="eclipselink.target-database" value="MySQL"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/JPA" />
       <property name="javax.persistence.jdbc.user" value="root" />
       <property name="javax.persistence.jdbc.password" value="Password123!"/>
