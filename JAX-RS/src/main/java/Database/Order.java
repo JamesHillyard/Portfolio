@@ -1,4 +1,4 @@
-package POST;
+package Database;
 
 public class Order {
     public int id;

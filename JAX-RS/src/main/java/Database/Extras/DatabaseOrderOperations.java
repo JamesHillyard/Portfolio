@@ -1,6 +1,6 @@
-package POST.Extras;
+package Database.Extras;
 
-import POST.Order;
+import Database.Order;
 
 import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;

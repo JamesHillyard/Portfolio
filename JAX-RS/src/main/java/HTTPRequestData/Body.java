@@ -8,7 +8,6 @@ public class Body {
 
     /**
      * The only parameter without annotation will be a container for the request body.
-     * @return
      */
     @POST
     public String viewMethodBody(String body) {

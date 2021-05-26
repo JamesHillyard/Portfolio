@@ -1,7 +1,6 @@
 package Cookies;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
@@ -13,10 +12,9 @@ public class CreateCookie {
     @Path("{name}")
     @Produces(MediaType.TEXT_PLAIN)
     public Response createCookie(@PathParam("name") String name) {
-        Cookie cookie = new Cookie("name", name, "/", "localhost");
         return Response
                 .ok()
-                .cookie(new NewCookie(cookie))
+                .cookie(new NewCookie("Name-Cookie", name, "/tutorial", "localhost", "A name storing cookie", 10000, false))
                 .build();
     }
 }
