@@ -12,7 +12,7 @@
 </head>
 <body>
 <div style="text-align: center;">
-    <jsp:useBean id = "bean" class = "action.JSPBean" />
+    <jsp:useBean id = "bean" class = "fish.payara.james.portfolio.jsp.action.JSPBean" />
     <jsp:setProperty name="bean" property="message" value="Hello James"/>
     <p><b>Got Message:</b></p>
     <jsp:getProperty name="bean" property="message"/>

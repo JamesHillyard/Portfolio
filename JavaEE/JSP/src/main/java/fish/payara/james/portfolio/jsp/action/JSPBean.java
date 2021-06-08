@@ -1,4 +1,4 @@
-package action;
+package fish.payara.james.portfolio.jsp.action;
 
 public class JSPBean {
     private String message = "No message specified";
