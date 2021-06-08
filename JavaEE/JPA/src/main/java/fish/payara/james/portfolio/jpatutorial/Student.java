@@ -1,15 +1,18 @@
-package JPATutorial.Inserting;
+package fish.payara.james.portfolio.jpatutorial;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Students")
-public class SimpleStudent {
+@Table(name = "Students", schema = "JPA")
+public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
+
     private int age;
+
 
     public int getId() {
         return id;
@@ -34,4 +37,5 @@ public class SimpleStudent {
     public void setAge(int age) {
         this.age = age;
     }
+
 }

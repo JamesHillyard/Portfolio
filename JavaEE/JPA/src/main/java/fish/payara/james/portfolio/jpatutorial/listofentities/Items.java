@@ -1,4 +1,4 @@
-package JPATutorial.ListOfEntities;
+package fish.payara.james.portfolio.jpatutorial.listofentities;
 
 import javax.persistence.*;
 

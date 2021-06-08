@@ -1,4 +1,4 @@
-package JPATutorial.EndpointExample;
+package fish.payara.james.portfolio.jpatutorial.endpointexample;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,4 +1,4 @@
-package JPATutorial.Inserting;
+package fish.payara.james.portfolio.jpatutorial.inserting;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

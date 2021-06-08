@@ -1,4 +1,4 @@
-package JPATutorial.EndpointExample;
+package fish.payara.james.portfolio.jpatutorial.endpointexample;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

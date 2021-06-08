@@ -1,4 +1,4 @@
-package JPATutorial.DeleteEntity;
+package fish.payara.james.portfolio.jpatutorial.deleteentity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

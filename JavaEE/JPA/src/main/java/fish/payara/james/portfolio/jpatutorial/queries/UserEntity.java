@@ -1,18 +1,16 @@
-package JPATutorial;
+package fish.payara.james.portfolio.jpatutorial.queries;
 
 import javax.persistence.*;
 
+@Table(name = "users", schema = "JPA")
 @Entity
-@Table(name = "Students", schema = "JPA")
-public class Student {
+@NamedQuery(name = "UserEntity.findByUserId", query = "SELECT u FROM UserEntity u WHERE u.id=:userId")
+public class UserEntity {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-
     private String name;
-
-    private int age;
-
 
     public int getId() {
         return id;
@@ -29,13 +27,4 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
 }

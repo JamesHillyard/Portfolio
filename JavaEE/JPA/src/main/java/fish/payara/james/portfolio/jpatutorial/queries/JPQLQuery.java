@@ -1,4 +1,4 @@
-package JPATutorial.Queries;
+package fish.payara.james.portfolio.jpatutorial.queries;
 
 
 import javax.persistence.EntityManager;
