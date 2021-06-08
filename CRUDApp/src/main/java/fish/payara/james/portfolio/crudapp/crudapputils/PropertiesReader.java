@@ -1,4 +1,4 @@
-package util;
+package fish.payara.james.portfolio.crudapp.crudapputils;
 
 import javax.enterprise.context.Dependent;
 import java.io.IOException;

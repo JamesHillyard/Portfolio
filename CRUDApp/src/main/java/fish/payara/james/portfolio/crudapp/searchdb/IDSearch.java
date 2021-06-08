@@ -1,7 +1,7 @@
-package SearchDB;
+package fish.payara.james.portfolio.crudapp.searchdb;
 
-import jdbc.Company;
-import jdbc.CompanyService;
+import fish.payara.james.portfolio.crudapp.jdbc.Company;
+import fish.payara.james.portfolio.crudapp.jdbc.CompanyService;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;

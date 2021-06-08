@@ -1,7 +1,7 @@
-package SearchDB;
+package fish.payara.james.portfolio.crudapp.searchdb;
 
-import jdbc.CompanyService;
-import databaseOperations.DeleteRow;
+import fish.payara.james.portfolio.crudapp.databaseoperations.DeleteRow;
+import fish.payara.james.portfolio.crudapp.jdbc.CompanyService;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -15,7 +15,7 @@ import java.io.IOException;
 
 @WebServlet(name = "DeleteData", value = "/DeleteData")
 public class DeleteData extends HttpServlet {
-    @Resource(lookup = "jdbc/mysqlPool")
+    @Resource(lookup = "fish/payara/james/portfolio/crudapp/jdbc/mysqlPool")
     private DataSource dataSource;
 
     @Inject

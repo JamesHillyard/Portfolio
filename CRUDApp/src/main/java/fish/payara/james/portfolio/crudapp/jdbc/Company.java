@@ -1,4 +1,4 @@
-package jdbc;
+package fish.payara.james.portfolio.crudapp.jdbc;
 
 import java.io.Serializable;
 

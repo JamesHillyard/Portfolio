@@ -1,4 +1,4 @@
-package databaseOperations;
+package fish.payara.james.portfolio.crudapp.databaseoperations;
 
 import javax.annotation.Resource;
 import javax.enterprise.context.RequestScoped;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 @RequestScoped
 public class InsertRow {
 
-    @Resource(lookup = "jdbc/mysqlPool")
+    @Resource(lookup = "fish/payara/james/portfolio/crudapp/jdbc/mysqlPool")
     private DataSource dataSource;
 
     public void addRow(int id, String companyName) throws SQLException {

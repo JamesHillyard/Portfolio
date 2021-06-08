@@ -1,10 +1,9 @@
-package jdbc;
+package fish.payara.james.portfolio.crudapp.jdbc;
 
-import util.PropertiesReader;
+import fish.payara.james.portfolio.crudapp.crudapputils.PropertiesReader;
+
 import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;
-
-
 import javax.enterprise.context.Initialized;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
@@ -14,7 +13,7 @@ import java.sql.SQLException;
 
 @ApplicationScoped
 public class InitializeDatabase {
-    @Resource(name = "jdbc/mysqlPool")
+    @Resource(name = "fish.payara.james.portfolio.crudapp.jdbc/mysqlPool")
     private DataSource dataSource;
     @Inject
     PropertiesReader pr;

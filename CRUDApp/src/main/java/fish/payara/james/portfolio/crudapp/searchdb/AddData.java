@@ -1,7 +1,7 @@
-package SearchDB;
+package fish.payara.james.portfolio.crudapp.searchdb;
 
-import databaseOperations.InsertRow;
-import util.validateInput;
+import fish.payara.james.portfolio.crudapp.databaseoperations.InsertRow;
+import fish.payara.james.portfolio.crudapp.crudapputils.ValidateInput;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @WebServlet(name = "AddData", value = "/AddData")
 public class AddData extends HttpServlet {
-    @Resource(lookup = "jdbc/mysqlPool")
+    @Resource(lookup = "fish/payara/james/portfolio/crudapp/jdbc/mysqlPool")
     private DataSource dataSource;
 
     @Inject
@@ -27,7 +27,7 @@ public class AddData extends HttpServlet {
         try {
             int id = Integer.parseInt(request.getParameter("ID"));
             String companyName = request.getParameter("companyName");
-            validateInput.assertNotNull(id,companyName);
+            ValidateInput.assertNotNull(id,companyName);
             insertRow.addRow(id, companyName);
             request.setAttribute("idAdded", id);
             request.setAttribute("nameAdded", companyName);

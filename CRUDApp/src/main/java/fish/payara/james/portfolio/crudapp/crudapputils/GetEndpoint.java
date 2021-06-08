@@ -1,4 +1,4 @@
-package util;
+package fish.payara.james.portfolio.crudapp.crudapputils;
 
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

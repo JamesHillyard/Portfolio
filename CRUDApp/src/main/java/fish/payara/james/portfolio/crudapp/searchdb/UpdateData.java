@@ -1,7 +1,6 @@
-package SearchDB;
+package fish.payara.james.portfolio.crudapp.searchdb;
 
-import jdbc.CompanyService;
-import databaseOperations.UpdateRow;
+import fish.payara.james.portfolio.crudapp.databaseoperations.UpdateRow;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;

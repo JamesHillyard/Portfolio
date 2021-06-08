@@ -1,4 +1,4 @@
-package databaseOperations;
+package fish.payara.james.portfolio.crudapp.databaseoperations;
 
 import javax.annotation.Resource;
 import javax.enterprise.context.RequestScoped;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 @RequestScoped
 public class DeleteRow {
-    @Resource(lookup = "jdbc/mysqlPool")
+    @Resource(lookup = "fish/payara/james/portfolio/crudapp/jdbc/mysqlPool")
     private DataSource dataSource;
 
     public void removeRow(int id) throws SQLException {

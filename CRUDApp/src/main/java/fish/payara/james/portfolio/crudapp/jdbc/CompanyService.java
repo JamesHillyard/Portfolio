@@ -1,8 +1,7 @@
-package jdbc;
+package fish.payara.james.portfolio.crudapp.jdbc;
 
 import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +10,7 @@ import java.sql.SQLException;
 
 @ApplicationScoped
 public class CompanyService {
-    @Resource(lookup = "jdbc/mysqlPool")
+    @Resource(lookup = "fish/payara/james/portfolio/crudapp/jdbc/mysqlPool")
     private DataSource dataSource;
 
     public Company findCompany(int id) throws SQLException {
