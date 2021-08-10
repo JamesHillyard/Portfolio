@@ -4,15 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fish.payara.james.portfolio</groupId>
-    <artifactId>portfolio-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <parent>
+        <artifactId>portfolio-parent</artifactId>
+        <groupId>fish.payara.james.portfolio</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+
+    <groupId>fish.payara.james.portfolio.javaee</groupId>
+    <artifactId>javaee-parent</artifactId>
+
     <packaging>pom</packaging>
 
     <modules>
-        <module>CRUDApp</module>
-        <module>JAX-RS</module>
-        <module>JavaEESamples</module>
+        <module>Arquillian</module>
+        <module>CDI</module>
+        <module>JPA</module>
+        <module>JSP</module>
+        <module>ServletTutorial</module>
+        <module>TestNG</module>
     </modules>
 
     <properties>
