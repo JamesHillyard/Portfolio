@@ -11,7 +11,7 @@
   <servlet>
     <display-name>ErrorHandler</display-name>
     <servlet-name>ErrorHandler</servlet-name>
-    <servlet-class>error.ErrorHandler404</servlet-class>
+    <servlet-class>fish.payara.james.portfolio.servlettutorial.error.ErrorHandler404</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ErrorHandler</servlet-name>
@@ -21,7 +21,7 @@
     <description></description>
     <display-name>ErrorHandlerGeneral</display-name>
     <servlet-name>ErrorHandlerGeneral</servlet-name>
-    <servlet-class>error.ErrorHandlerGeneral</servlet-class>
+    <servlet-class>fish.payara.james.portfolio.servlettutorial.error.ErrorHandlerGeneral</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ErrorHandlerGeneral</servlet-name>
@@ -31,7 +31,7 @@
     <description></description>
     <display-name>ErrorServlet</display-name>
     <servlet-name>ErrorServlet</servlet-name>
-    <servlet-class>error.ErrorServlet</servlet-class>
+    <servlet-class>fish.payara.james.portfolio.servlettutorial.error.ErrorServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ErrorServlet</servlet-name>
@@ -40,7 +40,7 @@
   <!-- Declares FilterInput in package 'demo' as a filter for anything going to '/ProcessInput' -->
   <filter>
     <filter-name>FilterInput</filter-name>
-    <filter-class>demo.FilterInput</filter-class>
+    <filter-class>fish.payara.james.portfolio.servlettutorial.demo.FilterInput</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>FilterInput</filter-name>
