@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 @ApplicationScoped
 public class InitializeDatabase {
-    @Resource(name = "fish.payara.james.portfolio.crudapp.jdbc/mysqlPool")
+    @Resource(name = "jdbc/mysqlPool")
     private DataSource dataSource;
     @Inject
     PropertiesReader pr;

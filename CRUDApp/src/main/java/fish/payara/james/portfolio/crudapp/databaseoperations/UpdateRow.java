@@ -10,7 +10,7 @@ import java.sql.SQLException;
 @ApplicationScoped
 public class UpdateRow {
 
-    @Resource(lookup = "fish/payara/james/portfolio/crudapp/jdbc/mysqlPool")
+    @Resource(lookup = "jdbc/mysqlPool")
     private DataSource dataSource;
 
     public void updateRow(int id, String companyName) throws SQLException {

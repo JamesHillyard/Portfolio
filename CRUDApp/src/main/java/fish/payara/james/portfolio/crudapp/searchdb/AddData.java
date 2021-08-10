@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @WebServlet(name = "AddData", value = "/AddData")
 public class AddData extends HttpServlet {
-    @Resource(lookup = "fish/payara/james/portfolio/crudapp/jdbc/mysqlPool")
+    @Resource(lookup = "jdbc/mysqlPool")
     private DataSource dataSource;
 
     @Inject
