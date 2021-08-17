@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "TestNG-Portfolio-Suite">
+    <test name = "test1">
+        <groups>
+            <run>
+                <include name="testngShowcase"></include>
+                <include name="Numbers"></include>
+                <include name="Strings"></include>
+            </run>
+        </groups>
+
+        <parameter name = "myName" value="James"/>
+        <parameter name="executedServer" value="DESKTOP-GT5KOCV"></parameter>
+        <parameter name="myList" value="Apple, Orange, Pear"></parameter>
+
+        <packages>
+            <package name="fish.payara.james.portfolio.testng.*"></package>
+        </packages>
+    </test>
+</suite>
