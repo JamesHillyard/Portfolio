@@ -25,12 +25,6 @@
             <artifactId>jakarta.jakartaee-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.microprofile</groupId>
-            <artifactId>microprofile</artifactId>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- Unit Testing -->
         <dependency>
@@ -40,13 +34,41 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Arquillian Dependencies -->
+        <dependency>
             <groupId>org.jboss.arquillian.junit</groupId>
             <artifactId>arquillian-junit-container</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
-            <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+            <groupId>org.jboss.arquillian.core</groupId>
+            <artifactId>arquillian-core-spi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-container-spi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.test</groupId>
+            <artifactId>arquillian-test-spi</artifactId>
+        </dependency>
+
+        <!-- Payara Arquillian Container -->
+        <dependency>
+            <groupId>fish.payara.arquillian</groupId>
+            <artifactId>arquillian-payara-server-embedded</artifactId>
+            <version>1.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>fish.payara.extras</groupId>
+            <artifactId>payara-embedded-all</artifactId>
+            <version>5.2021.5</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -70,52 +92,34 @@
         </dependencies>
     </dependencyManagement>
 
-    <profiles>
-        <profile>
-            <id>remote</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>fish.payara.arquillian</groupId>
-                    <artifactId>arquillian-payara-server-remote</artifactId>
-                    <version>1.1</version>
-                    <scope>test</scope>
-                    <optional>true</optional>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>embedded</id>
-            <dependencies>
-                <dependency>
-                    <groupId>fish.payara.arquillian</groupId>
-                    <artifactId>arquillian-payara-server-embedded</artifactId>
-                    <version>1.1</version>
-                    <scope>test</scope>
-                    <optional>true</optional>
-                </dependency>
-                <dependency>
-                    <groupId>fish.payara.extras</groupId>
-                    <artifactId>payara-embedded-all</artifactId>
-                    <version>5.194</version>
-                    <scope>provided</scope>
-                    <optional>true</optional>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
+    <!-- Maven Testing -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>run-tests</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
     <!-- For patched APIs -->
-    <repositories>
-        <repository>
-            <id>payara-patched-externals</id>
-            <name>Payara Patched Externals</name>
-            <url>https://raw.github.com/payara/Payara_PatchedProjects/master</url>
-        </repository>
-    </repositories>
-
-
 
 </project>
