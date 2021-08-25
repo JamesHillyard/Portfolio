@@ -8,7 +8,6 @@ import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import servlet.EchoServlet;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -17,7 +16,7 @@ import java.net.URL;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Arquillian.class)
-public class EchoServletTest {
+public class EchoServletIT {
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)

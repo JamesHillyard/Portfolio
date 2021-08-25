@@ -1,6 +1,5 @@
 package fish.payara.james.portfolio.arquillian.cdi;
 
-import cdi.CdiBean;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
@@ -10,26 +9,24 @@ import org.junit.runner.RunWith;
 import javax.inject.Inject;
 
 import static org.jboss.shrinkwrap.api.ShrinkWrap.create;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(Arquillian.class)
-public class CdiBeanTest {
-
+public class RandomIT {
     @Deployment
     public static WebArchive createDeployment() {
         return create(WebArchive.class, "arquillian-test.war")
-                .addPackage(CdiBean.class.getPackage())
+                .addPackage(RandomNumberGenerator.class.getPackage())
                 .addAsWebInfResource("web.xml");
     }
 
     @Inject
-    private CdiBean bean;
+    RandomNumberGenerator randomNumberGenerator;
 
     @Test
-    public void testCdiBeanInjection() {
-        assertNotNull(bean);
-        assertEquals(0, bean.getCounter());
+    public void shouldGenerateRandomNumber() {
+        int randomNumber = randomNumberGenerator.getRandomNumber();
+        assertTrue(randomNumber >= 0);
+        assertTrue(randomNumber <= 100);
     }
-
 }

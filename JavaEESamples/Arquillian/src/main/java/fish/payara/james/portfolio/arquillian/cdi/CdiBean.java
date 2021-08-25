@@ -1,4 +1,4 @@
-package cdi;
+package fish.payara.james.portfolio.arquillian.cdi;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package cdi;
+package fish.payara.james.portfolio.arquillian.cdi;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

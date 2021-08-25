@@ -1,4 +1,4 @@
-package cdi;
+package fish.payara.james.portfolio.arquillian.cdi;
 
 import javax.inject.Inject;
 import javax.ws.rs.Path;
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 import static javax.ws.rs.core.Response.noContent;
 
-@Path("/")
+@Path("/beanCounter")
 public class EndpointImpl implements Endpoint, Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,7 +21,6 @@ public class EndpointImpl implements Endpoint, Serializable {
         return noContent().status(200).build();
     }
 
-    @Override
     @Path("/largeIncrement")
     public Response largeIncrement(){
         bean.setCounter(100);
