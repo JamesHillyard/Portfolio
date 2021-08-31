@@ -23,6 +23,7 @@
         <module>JSP</module>
         <module>ServletTutorial</module>
         <module>TestNG</module>
+        <module>JSON-B</module>
     </modules>
 
     <properties>
