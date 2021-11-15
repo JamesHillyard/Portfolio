@@ -19,10 +19,11 @@ public class ClusterJspTest {
     @BeforeClass(alwaysRun = true)
     public void setupWebClient() throws IOException {
         URL url = new URL("http://localhost:8080");
-        URL clusterjspUrl = new URL("http://localhost:8080/clusterjsp");
         connection = (HttpURLConnection) url.openConnection();
-        clusterJspConnection = (HttpURLConnection) clusterjspUrl.openConnection();
         connection.setRequestMethod("GET");
+
+        URL clusterjspUrl = new URL("http://localhost:8080/");
+        clusterJspConnection = (HttpURLConnection) clusterjspUrl.openConnection();
         clusterJspConnection.setRequestMethod("GET");
 
     }
@@ -32,13 +33,13 @@ public class ClusterJspTest {
         assertEquals(connection.getResponseCode(), 200);
     }
 
-    @Test(groups = "testngShowcase")
+    @Test(groups = "clusterJspTest")
     public void checkClusterJspIsDeployed() throws IOException {
         setupWebClient();
         assertEquals(clusterJspConnection.getResponseCode(), 200);
     }
 
-    @Test(groups = "testngShowcase", dependsOnMethods = "checkClusterJspIsDeployed")
+    @Test(groups = "clusterJspTest", dependsOnMethods = "checkClusterJspIsDeployed")
     @Parameters("executedServer")
     public void checkResponseBody(String computerName){
         String response = getPage();

@@ -1,5 +1,6 @@
 package fish.payara.james.portfolio.testng.junitvstestng;
 
+import fish.payara.james.portfolio.testng.DP;
 import org.testng.annotations.*;
 import org.testng.internal.thread.ThreadTimeoutException;
 
@@ -51,7 +52,7 @@ public class TestNG {
 
     @Test(groups =  "testngShowcase")
     @Parameters({"mango"})
-    public void fruitNames(@Optional("mango") String fruit){
+    public void fruitNames(@Optional("orange") String fruit){
         assertTrue(fruit.equals("mango"));
     }
 
@@ -70,8 +71,13 @@ public class TestNG {
         assertEquals(result, sum);
     }
 
+    @Test(groups =  "testngShowcase", dataProvider = "data-provider", dataProviderClass = DP.class)
+    public void testngMethodParameter(String value){
+        assertEquals("First-Value", value);
+    }
+
     /**
-     * fish.payara.james.portfolio.testng.junitvstestng.TestNG supports dependency testing. This means in a set of test methods, if the initial test fails,
+     * TestNG supports dependency testing. This means in a set of test methods, if the initial test fails,
      * all subsequent dependent tests will be skipped, not marked as failed as in the case for JUnit.
      */
 
