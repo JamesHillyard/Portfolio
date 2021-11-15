@@ -24,6 +24,8 @@
         <module>ServletTutorial</module>
         <module>TestNG</module>
         <module>JSON-B</module>
+        <module>BeanValidation</module>
+        <module>JSON-P</module>
     </modules>
 
     <properties>

@@ -12,8 +12,12 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.logging.Logger;
+
 @RunWith(Arquillian.class)
 public class LifecycleIT {
+
+    private static final Logger LOGGER = Logger.getLogger(LifecycleIT.class.getName());
 
     @Deployment
     public static JavaArchive createDeployment() {
@@ -23,31 +27,31 @@ public class LifecycleIT {
 
     @BeforeDeploy
     public void doBeforeDeploy() {
-        System.out.println("@BeforeDeploy");
+        LOGGER.info("@BeforeDeploy");
     }
 
     @AfterDeploy
     public void doAfterDeploy() {
-        System.out.println("@AfterDeploy");
+        LOGGER.info("@AfterDeploy");
     }
 
     @BeforeUnDeploy
     public void doBeforeUnDeploy() {
-        System.out.println("@BeforeUnDeploy");
+        LOGGER.info("@BeforeUnDeploy");
     }
 
     @AfterUnDeploy
     public void doAfterUnDeploy() {
-        System.out.println("@AfterUnDeploy");
+        LOGGER.info("@AfterUnDeploy");
     }
 
     @Test
     public void shouldBeAbleToOne() {
-        System.out.println("@Test - 1");
+        LOGGER.severe("@Test - 1");
     }
 
     @Test
     public void shouldBeAbleToTwo() {
-        System.out.println("@Test - 2");
+        LOGGER.severe("@Test - 2");
     }
 }

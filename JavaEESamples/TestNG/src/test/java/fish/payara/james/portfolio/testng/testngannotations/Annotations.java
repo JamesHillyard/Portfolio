@@ -19,57 +19,57 @@ public class Annotations {
      * @AfterSuite
      */
 
-    @BeforeSuite
+    @BeforeSuite(groups = "annotations")
     public void testngBeforeSuite(){
         LOGGER.info("Before Suite");
     }
 
-    @AfterSuite
+    @AfterSuite(groups = "annotations")
     public void testngAfterSuite(){
         LOGGER.info("After Suite");
     }
 
-    @BeforeTest
+    @BeforeTest(groups = "annotations")
     public void testngBeforeTest(){
         LOGGER.info("Before Test");
     }
 
-    @AfterTest
+    @AfterTest(groups = "annotations")
     public void testngAfterTest(){
         LOGGER.info("After Test");
     }
 
-    @BeforeClass
+    @BeforeClass(groups = "annotations")
     public void testngBeforeClass(){
         LOGGER.info("Before Class");
     }
 
-    @AfterClass
+    @AfterClass(groups = "annotations")
     public void testngAfterClass(){
         LOGGER.info("After Class");
     }
 
-    @BeforeMethod
+    @BeforeMethod(groups = "annotations")
     public void testngBeforeMethod(){
         LOGGER.info("Before Method");
     }
 
-    @AfterMethod
+    @AfterMethod(groups = "annotations")
     public void testngAfterMethod(){
         LOGGER.info("After Method");
     }
 
-    @BeforeGroups
+    @BeforeGroups(groups = "annotations")
     public void testngBeforeGroups(){
         LOGGER.info("Before Groups");
     }
 
-    @AfterGroups
+    @AfterGroups(groups = "annotations")
     public void testngAfterGroups(){
         LOGGER.info("After Groups");
     }
 
-    @Test(groups = "testngShowcase")
+    @Test(groups = "annotations")
     public void sampleTest(){
         LOGGER.severe("Running test");
     }

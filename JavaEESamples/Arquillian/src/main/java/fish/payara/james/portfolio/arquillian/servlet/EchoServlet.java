@@ -12,7 +12,7 @@ public class EchoServlet extends HttpServlet
     public static final String MESSAGE_PARAM = "message";
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
     {
         response.getWriter().append(request.getParameter(MESSAGE_PARAM));
     }
