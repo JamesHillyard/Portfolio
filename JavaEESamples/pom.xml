@@ -26,6 +26,7 @@
         <module>JSON-B</module>
         <module>BeanValidation</module>
         <module>JSON-P</module>
+        <module>Websockets</module>
     </modules>
 
     <properties>
