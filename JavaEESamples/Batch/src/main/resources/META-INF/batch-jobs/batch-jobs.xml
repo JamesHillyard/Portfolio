@@ -1,0 +1,6 @@
+<job id="testjob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+    <step id="teststep">
+        <batchlet ref="SimpleBatchlet"/>
+        <!-- You could use the tag <end on="COMPLETED"/> here to finish the job once it's marked COMPLETED -->
+    </step>
+</job>
