@@ -1,0 +1,10 @@
+# Create a car with a non-banned colour
+POST http://localhost:8080/Interceptors-1.0-SNAPSHOT/Interceptors/car/new/Blue/1.6
+
+# Get the car with the non-banned colour
+###
+GET http://localhost:8080/Interceptors-1.0-SNAPSHOT/Interceptors/car/Blue/1.6
+
+# Create a car with a banned colour
+###
+POST http://localhost:8080/Interceptors-1.0-SNAPSHOT/Interceptors/car/new/Yellow/1.25
